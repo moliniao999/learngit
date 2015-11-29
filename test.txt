@@ -19,7 +19,7 @@ public class TestThread implements Runnable {
 
         try {
             while ((nowPath = filePaths.poll()) != null) {
-                TestOPenOffiice.office2PDF(nowPath, "E://×ª»¯²âÊÔ//" + System.currentTimeMillis() + ".pdf");
+                TestOPenOffiice.office2PDF(nowPath, "E://Ã—ÂªÂ»Â¯Â²Ã¢ÃŠÃ”//" + System.currentTimeMillis() + ".pdf");
             }
         } catch (Exception se) {
             System.out.println(se.toString());
@@ -42,8 +42,9 @@ public class TestThread implements Runnable {
         ExecutorService executor = Executors.newFixedThreadPool(50);
         executor.execute(new TestThread());
 //        for (int i=1;i<=10;i++){
-//            TestOPenOffiice.WriteStringToFile("ÄãºÃ!\n");
+//            TestOPenOffiice.WriteStringToFile("Ã„Ã£ÂºÃƒ!\n");
 //        }
+        System.out.println("aaa");
 
    }
 }
