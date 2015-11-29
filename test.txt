@@ -47,6 +47,3 @@ public class TestThread implements Runnable {
 
    }
 }
-
-SHA256:GQrOE9ZCoBR2FsVXuQhFHn61rHQUrt1Jy8DCkSUO4f0 weiliwhereareyou@163.com
-
