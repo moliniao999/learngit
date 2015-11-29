@@ -1,0 +1,116 @@
+2015-11-02 22:43:17 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-11-02 22:43:18 [ localhost-startStop-1:144 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Mon Nov 02 22:43:18 CST 2015]; root of context hierarchy
+2015-11-02 22:43:18 [ localhost-startStop-1:241 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-11-02 22:43:18 [ localhost-startStop-1:443 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:43:18 [ localhost-startStop-1:562 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:43:18 [ localhost-startStop-1:576 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:43:18 [ localhost-startStop-1:582 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-11-02 22:43:18 [ localhost-startStop-1:881 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-11-02 22:43:18 [ localhost-startStop-1:987 ] - [ INFO ] Initializing ExecutorService  'qbScheduler'
+2015-11-02 22:43:18 [ localhost-startStop-1:988 ] - [ INFO ] Bean 'qbScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-11-02 22:43:18 [ localhost-startStop-1:1006 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@f2e3abd: defining beans [userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,qbScheduler,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-11-02 22:43:19 [ localhost-startStop-1:1541 ] - [ INFO ] {dataSource-1} inited
+2015-11-02 22:43:20 [ localhost-startStop-1:2128 ] - [ INFO ] Root WebApplicationContext: initialization completed in 2123 ms
+2015-11-02 22:43:20 [ localhost-startStop-1:2169 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-11-02 22:43:20 [ localhost-startStop-1:2176 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Mon Nov 02 22:43:20 CST 2015]; parent: Root WebApplicationContext
+2015-11-02 22:43:20 [ localhost-startStop-1:2178 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-11-02 22:43:20 [ localhost-startStop-1:2226 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:43:20 [ localhost-startStop-1:2281 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3d68de97: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,registerUserController,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@f2e3abd
+2015-11-02 22:43:21 [ localhost-startStop-1:3053 ] - [ INFO ] Mapped URL path [/register/registerCustomer] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3054 ] - [ INFO ] Mapped URL path [/register/registerCustomer.*] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3054 ] - [ INFO ] Mapped URL path [/register/registerCustomer/] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3054 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3054 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage.*] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3054 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage/] onto handler 'registerUserController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3055 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3055 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3055 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-11-02 22:43:21 [ localhost-startStop-1:3120 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 951 ms
+2015-11-02 22:43:53 [ http-bio-8080-exec-6:35475 ] - [ INFO ] hasMatchUser  is  starting............  name=wesley
+2015-11-02 22:43:53 [ http-bio-8080-exec-6:35475 ] - [ INFO ] 我是logger1，info
+2015-11-02 22:43:53 [ http-bio-8080-exec-6:35475 ] - [ WARN ] 我是logger1，warn
+2015-11-02 22:43:53 [ http-bio-8080-exec-6:35475 ] - [ ERROR ] 我是logger1，error
+2015-11-02 22:43:53 [ http-bio-8080-exec-6:35477 ] - [ FATAL ] 我是logger1，fatal
+2015-11-02 22:49:26 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-11-02 22:49:26 [ localhost-startStop-1:93 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Mon Nov 02 22:49:26 CST 2015]; root of context hierarchy
+2015-11-02 22:49:26 [ localhost-startStop-1:167 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-11-02 22:49:26 [ localhost-startStop-1:327 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:49:26 [ localhost-startStop-1:410 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:49:26 [ localhost-startStop-1:424 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:49:26 [ localhost-startStop-1:430 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-11-02 22:49:27 [ localhost-startStop-1:762 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-11-02 22:49:27 [ localhost-startStop-1:869 ] - [ INFO ] Initializing ExecutorService  'qbScheduler'
+2015-11-02 22:49:27 [ localhost-startStop-1:870 ] - [ INFO ] Bean 'qbScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-11-02 22:49:27 [ localhost-startStop-1:884 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@54903453: defining beans [userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,qbScheduler,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-11-02 22:49:27 [ localhost-startStop-1:1437 ] - [ INFO ] {dataSource-1} inited
+2015-11-02 22:49:28 [ localhost-startStop-1:1992 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1992 ms
+2015-11-02 22:49:28 [ localhost-startStop-1:2039 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-11-02 22:49:28 [ localhost-startStop-1:2046 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Mon Nov 02 22:49:28 CST 2015]; parent: Root WebApplicationContext
+2015-11-02 22:49:28 [ localhost-startStop-1:2048 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-11-02 22:49:28 [ localhost-startStop-1:2100 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-11-02 22:49:28 [ localhost-startStop-1:2144 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@31148fb3: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,registerUserController,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@54903453
+2015-11-02 22:49:29 [ localhost-startStop-1:2788 ] - [ INFO ] Mapped URL path [/register/registerCustomer] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2788 ] - [ INFO ] Mapped URL path [/register/registerCustomer.*] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2788 ] - [ INFO ] Mapped URL path [/register/registerCustomer/] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2788 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2789 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage.*] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2789 ] - [ INFO ] Mapped URL path [/register/redirectRegisterPage/] onto handler 'registerUserController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2790 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2790 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2790 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-11-02 22:49:29 [ localhost-startStop-1:2952 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 912 ms
+2015-11-02 22:50:09 [ http-bio-8080-exec-8:43527 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-5:43528 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-9:43528 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-7:43527 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-4:43527 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-6:43532 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-9:43542 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:09 [ http-bio-8080-exec-2:43543 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-9:46376 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-2:46376 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-7:46378 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-6:46378 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-9:46383 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-1:46383 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-10:46384 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:12 [ http-bio-8080-exec-4:46386 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:29 [ http-bio-8080-exec-4:63628 ] - [ INFO ] hasMatchUser  is  starting............  name=wesley
+2015-11-02 22:50:29 [ http-bio-8080-exec-4:63629 ] - [ INFO ] 我是logger1，info
+2015-11-02 22:50:29 [ http-bio-8080-exec-4:63629 ] - [ WARN ] 我是logger1，warn
+2015-11-02 22:50:29 [ http-bio-8080-exec-4:63629 ] - [ ERROR ] 我是logger1，error
+2015-11-02 22:50:29 [ http-bio-8080-exec-4:63629 ] - [ FATAL ] 我是logger1，fatal
+2015-11-02 22:50:39 [ http-bio-8080-exec-3:73108 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-8:73109 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-4:73110 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-2:73111 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-6:73111 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-3:73113 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-4:73116 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-5:73120 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:50:39 [ http-bio-8080-exec-1:73128 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-7:189702 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-9:189704 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-5:189704 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-2:189706 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-10:189707 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-8:189708 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-7:189709 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 22:52:35 [ http-bio-8080-exec-5:189711 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-10:725633 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-6:725634 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-3:725635 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-4:725635 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-9:725636 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-2:725637 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-10:725640 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-3:725640 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 23:01:31 [ http-bio-8080-exec-8:725655 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-5:2877709 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/css/bootstrap.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-7:2877711 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/MFT.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-2:2877711 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/font-awesome/css/font-awesome.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-1:2877712 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.min.css] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-6:2877713 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/jquery/jquery-1.11.3.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-9:2877713 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/bootstrap/js/bootstrap.min.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-5:2877717 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/plugins/select2/select2.js] in DispatcherServlet with name 'spring'
+2015-11-02 23:37:23 [ http-bio-8080-exec-5:2877726 ] - [ WARN ] No mapping found for HTTP request with URI [/springmvc/lib/common/logo_02.png] in DispatcherServlet with name 'spring'

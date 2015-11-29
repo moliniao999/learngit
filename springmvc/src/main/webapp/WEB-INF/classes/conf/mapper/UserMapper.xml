@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springmvc.dao.UserDAO">
+            
+     	    <!--开启二级缓存
+            映射语句文件中的所有 select 语句将会被缓存。
+            映射语句文件中的所有 insert,update 和 delete 语句会刷新缓存。
+            缓存会使用 Least Recently Used(LRU,最近最少使用的)算法来收回。
+            根据时间表(比如 no Flush Interval,没有刷新间隔), 缓存不会以任何时间顺序 来刷新。
+            缓存会存储列表集合或对象(无论查询方法返回什么)的 1024 个引用。
+            缓存会被视为是 read/write(可读/可写)的缓存,意味着对象检索不是共享的,而 且可以安全地被调用者修改,而不干扰其他调用者或线程所做的潜在修改。
+            可用的收回策略有: 默认LRU
+LRU – 最近最少使用的:移除最长时间不被使用的对象。
+FIFO – 先进先出:按对象进入缓存的顺序来移除它们。
+SOFT – 软引用:移除基于垃圾回收器状态和软引用规则的对象。
+WEAK – 弱引用:更积极地移除基于垃圾收集器状态和弱引用规则的对象。
+            -->
+            <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true"/>
+    <!-- flushinterval刷新间隔时间/毫秒， readOnly只读的缓存会给所有调用者返回缓
+     存对象的相同实例。因此这些对象不能被修改。这提供了很重要的性能优势。可读写的缓存
+     会返回缓存对象的拷贝(通过序列化) 。这会慢一些,但是安全,因此默认是 false -->
+
+    <resultMap id="usermap" type="User"   >
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+           
+    </resultMap>
+
+    <insert id="insertUser" parameterType="com.springmvc.model.User" flushCache="true">
+        insert into t_user (user_id, user_name, password, last_ip) values (
+        #{userId}, #{userName}, #{password}, #{lastIp}
+        )
+    </insert>
+
+    <update id="updateUser" parameterType="User" flushCache="true">
+        update t_user
+        set user_name = #{userName},
+        password = #{password},
+        last_id = #{lastIp},
+        where user_id = #{userId}
+    </update>
+
+    <delete id="deleteUser">
+        delete from t_user where user_id = #{userId}
+    </delete>
+
+    <select id="getUsers" resultMap="usermap">
+        select user_id userid,user_name ,password from T_USER
+    </select>
+
+    <select id="countAll" resultType="int">  <!-- 查询表中记录总数 -->
+        select count(*) c from t_user
+    </select>
+
+    <select id="selectUser" parameterType="int"  resultMap="usermap"  resultType="User"  >
+        select *  from t_user where user_id=#{userId}
+    </select>
+
+    <select id="selectUserByName"    resultType="User">
+        select user_id userid,user_name username,password  from t_user where user_name=#{userName}
+    </select>
+
+    <select id="selectUserById"    resultType="User">
+        select user_id userId,user_name userName,password  from t_user where user_id=#{userId}
+    </select>
+     
+      
+          
+          
+</mapper>

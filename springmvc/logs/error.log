@@ -1,0 +1,2 @@
+2015-11-27 22:27:00 [ http-bio-8080-exec-7:111548 ] - [ ERROR ] 我是logger1，error
+2015-11-27 22:27:03 [ http-bio-8080-exec-7:115130 ] - [ FATAL ] 我是logger1，fatal

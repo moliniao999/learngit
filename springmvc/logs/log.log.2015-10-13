@@ -1,0 +1,408 @@
+2015-10-13 22:20:29 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:20:29 [ localhost-startStop-1:168 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:20:29 CST 2015]; root of context hierarchy
+2015-10-13 22:20:29 [ localhost-startStop-1:288 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:20:30 [ localhost-startStop-1:1064 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:20:30 [ localhost-startStop-1:1154 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:20:30 [ localhost-startStop-1:1169 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:20:30 [ localhost-startStop-1:1491 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:20:30 [ localhost-startStop-1:1550 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@12fd8088: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userDaoImpl,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:20:31 [ localhost-startStop-1:2395 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:20:32 [ localhost-startStop-1:2989 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@12fd8088: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userDaoImpl,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:20:32 [ localhost-startStop-1:3018 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 22:20:32 [ localhost-startStop-1:3019 ] - [ ERROR ] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.springmvc.dao.UserDAO com.springmvc.service.impl.UserServiceImpl.userDao; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.springmvc.dao.UserDAO com.springmvc.service.impl.UserServiceImpl.userDao; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 22 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 24 more
+2015-10-13 22:24:40 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:24:41 [ localhost-startStop-1:83 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:24:41 CST 2015]; root of context hierarchy
+2015-10-13 22:24:41 [ localhost-startStop-1:161 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:24:41 [ localhost-startStop-1:360 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:24:41 [ localhost-startStop-1:440 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:24:41 [ localhost-startStop-1:444 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:24:41 [ localhost-startStop-1:707 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:24:41 [ localhost-startStop-1:740 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18e8b496: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userDaoImpl,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:24:42 [ localhost-startStop-1:1319 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:24:42 [ localhost-startStop-1:1559 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18e8b496: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userDaoImpl,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:24:42 [ localhost-startStop-1:1565 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 22:24:42 [ localhost-startStop-1:1567 ] - [ ERROR ] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.springmvc.dao.UserDAO com.springmvc.service.impl.UserServiceImpl.userDao; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.springmvc.dao.UserDAO com.springmvc.service.impl.UserServiceImpl.userDao; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 22 more
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [com.springmvc.dao.UserDAO] is defined: expected single matching bean but found 2: userDaoImpl,userDAO
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:865)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 24 more
+2015-10-13 22:35:40 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:35:40 [ localhost-startStop-1:82 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:35:40 CST 2015]; root of context hierarchy
+2015-10-13 22:35:40 [ localhost-startStop-1:162 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:35:41 [ localhost-startStop-1:364 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:35:41 [ localhost-startStop-1:461 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:35:41 [ localhost-startStop-1:463 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:35:41 [ localhost-startStop-1:852 ] - [ WARN ] No MyBatis mapper was found in '[com.springmvc.dao]' package. Please check your configuration.
+2015-10-13 22:35:41 [ localhost-startStop-1:883 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:35:41 [ localhost-startStop-1:932 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3d1528ab: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2015-10-13 22:35:41 [ localhost-startStop-1:951 ] - [ ERROR ] Context initialization failed
+java.lang.NoClassDefFoundError: Lcom/springmvc/dao/UserDAO;
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2509)
+	at java.lang.Class.getDeclaredFields(Class.java:1819)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:324)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:840)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:495)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: com.springmvc.dao.UserDAO
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1858)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1709)
+	... 27 more
+2015-10-13 22:35:41 [ localhost-startStop-1:976 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Tue Oct 13 22:35:40 CST 2015]; root of context hierarchy
+2015-10-13 22:35:42 [ localhost-startStop-1:1676 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:35:42 [ localhost-startStop-1:1899 ] - [ WARN ] Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Tue Oct 13 22:35:40 CST 2015]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:360)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1010)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:559)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:143)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5050)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5712)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1574)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1564)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2015-10-13 22:35:42 [ localhost-startStop-1:1900 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3d1528ab: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+2015-10-13 22:35:42 [ localhost-startStop-1:1914 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 22:39:24 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:39:25 [ localhost-startStop-1:119 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:39:25 CST 2015]; root of context hierarchy
+2015-10-13 22:39:25 [ localhost-startStop-1:186 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:39:25 [ localhost-startStop-1:397 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:39:25 [ localhost-startStop-1:479 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:39:25 [ localhost-startStop-1:481 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:39:25 [ localhost-startStop-1:750 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:39:25 [ localhost-startStop-1:790 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2f64e4b: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:39:26 [ localhost-startStop-1:1335 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:39:26 [ localhost-startStop-1:1599 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1573 ms
+2015-10-13 22:39:26 [ localhost-startStop-1:1649 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 22:39:26 [ localhost-startStop-1:1654 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:39:26 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 22:39:26 [ localhost-startStop-1:1656 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 22:39:26 [ localhost-startStop-1:1712 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:39:26 [ localhost-startStop-1:1756 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3985d15c: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@2f64e4b
+2015-10-13 22:39:27 [ localhost-startStop-1:2391 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 22:39:27 [ localhost-startStop-1:2391 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 22:39:27 [ localhost-startStop-1:2391 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 22:39:27 [ localhost-startStop-1:2444 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 795 ms
+2015-10-13 22:40:39 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:40:40 [ localhost-startStop-1:108 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:40:40 CST 2015]; root of context hierarchy
+2015-10-13 22:40:40 [ localhost-startStop-1:189 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:40:40 [ localhost-startStop-1:419 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:40:40 [ localhost-startStop-1:495 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:40:40 [ localhost-startStop-1:500 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:40:40 [ localhost-startStop-1:802 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:40:40 [ localhost-startStop-1:872 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64535e6d: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:40:41 [ localhost-startStop-1:1543 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:40:41 [ localhost-startStop-1:1827 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1827 ms
+2015-10-13 22:40:41 [ localhost-startStop-1:1875 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 22:40:41 [ localhost-startStop-1:1881 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:40:41 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 22:40:41 [ localhost-startStop-1:1883 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 22:40:41 [ localhost-startStop-1:1949 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:40:41 [ localhost-startStop-1:1999 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@79c2a2a4: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@64535e6d
+2015-10-13 22:40:42 [ localhost-startStop-1:2623 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 22:40:42 [ localhost-startStop-1:2623 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 22:40:42 [ localhost-startStop-1:2623 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 22:40:42 [ localhost-startStop-1:2686 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 811 ms
+2015-10-13 22:41:45 [ http-bio-8080-exec-3:65999 ] - [ WARN ] Request method 'GET' not supported
+2015-10-13 22:43:10 [ http-bio-8080-exec-2:150541 ] - [ INFO ] hasMatchUser  is  starting............  name=wesley
+2015-10-13 22:43:10 [ http-bio-8080-exec-2:150541 ] - [ INFO ] 我是logger1，info
+2015-10-13 22:43:10 [ http-bio-8080-exec-2:150541 ] - [ WARN ] 我是logger1，warn
+2015-10-13 22:43:10 [ http-bio-8080-exec-2:150541 ] - [ ERROR ] 我是logger1，error
+2015-10-13 22:43:10 [ http-bio-8080-exec-2:150541 ] - [ FATAL ] 我是logger1，fatal
+2015-10-13 22:47:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:423420 ] - [ INFO ] Closing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:40:41 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 22:47:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:423422 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@79c2a2a4: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@64535e6d
+2015-10-13 22:47:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:423536 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Tue Oct 13 22:40:40 CST 2015]; root of context hierarchy
+2015-10-13 22:47:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:423538 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64535e6d: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:47:43 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:423568 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:75 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:47:45 CST 2015]; root of context hierarchy
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:132 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:207 ] - [ ERROR ] Context initialization failed
+org.springframework.beans.factory.xml.XmlBeanDefinitionStoreException: Line 18 in XML document from class path resource [conf/spring-bean.xml] is invalid; nested exception is org.xml.sax.SAXParseException; lineNumber: 18; columnNumber: 27; 元素 "task:scheduled-tasks" 的前缀 "task" 未绑定。
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:396)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:334)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:174)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:209)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:130)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:537)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:451)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:5003)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5517)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4020)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1344)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1545)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1523)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.xml.sax.SAXParseException; lineNumber: 18; columnNumber: 27; 元素 "task:scheduled-tasks" 的前缀 "task" 未绑定。
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:198)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:177)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:441)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:368)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:325)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:289)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2786)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:117)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:510)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:848)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:777)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:243)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:347)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:75)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:388)
+	... 24 more
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:232 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Tue Oct 13 22:47:45 CST 2015]; root of context hierarchy
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:242 ] - [ WARN ] Exception thrown from ApplicationListener handling ContextClosedEvent
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: Root WebApplicationContext: startup date [Tue Oct 13 22:47:45 CST 2015]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:347)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1049)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1010)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:559)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:143)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5050)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5712)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4020)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1344)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1545)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1523)
+	at java.lang.Thread.run(Thread.java:745)
+2015-10-13 22:47:45 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:243 ] - [ WARN ] Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Tue Oct 13 22:47:45 CST 2015]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:360)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1057)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1010)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:559)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:143)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:5050)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5712)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:160)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:4020)
+	at org.apache.catalina.loader.WebappLoader.backgroundProcess(WebappLoader.java:425)
+	at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1344)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1545)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1555)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1523)
+	at java.lang.Thread.run(Thread.java:745)
+2015-10-13 22:53:49 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:53:49 [ localhost-startStop-1:83 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:53:49 CST 2015]; root of context hierarchy
+2015-10-13 22:53:49 [ localhost-startStop-1:157 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:53:49 [ localhost-startStop-1:361 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:53:49 [ localhost-startStop-1:434 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:53:49 [ localhost-startStop-1:445 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:53:49 [ localhost-startStop-1:449 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:53:49 [ localhost-startStop-1:869 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:53:50 [ localhost-startStop-1:964 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18103333: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:53:50 [ localhost-startStop-1:1693 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:53:51 [ localhost-startStop-1:2084 ] - [ INFO ] Root WebApplicationContext: initialization completed in 2083 ms
+2015-10-13 22:53:51 [ localhost-startStop-1:2149 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 22:53:51 [ localhost-startStop-1:2155 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:53:51 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 22:53:51 [ localhost-startStop-1:2156 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 22:53:51 [ localhost-startStop-1:2211 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:53:51 [ localhost-startStop-1:2260 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@18be1fc7: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@18103333
+2015-10-13 22:53:51 [ localhost-startStop-1:2712 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 22:53:51 [ localhost-startStop-1:2712 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 22:53:51 [ localhost-startStop-1:2713 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 22:53:51 [ localhost-startStop-1:2766 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 617 ms
+2015-10-13 22:54:21 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 22:54:21 [ localhost-startStop-1:86 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 22:54:21 CST 2015]; root of context hierarchy
+2015-10-13 22:54:21 [ localhost-startStop-1:174 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 22:54:22 [ localhost-startStop-1:373 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:54:22 [ localhost-startStop-1:461 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:54:22 [ localhost-startStop-1:473 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:54:22 [ localhost-startStop-1:477 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 22:54:22 [ localhost-startStop-1:744 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 22:54:22 [ localhost-startStop-1:779 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@15946d47: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 22:54:23 [ localhost-startStop-1:1366 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 22:54:23 [ localhost-startStop-1:1728 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1727 ms
+2015-10-13 22:54:23 [ localhost-startStop-1:1775 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 22:54:23 [ localhost-startStop-1:1779 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 22:54:23 [ localhost-startStop-1:1781 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 22:54:23 [ localhost-startStop-1:1852 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 22:54:23 [ localhost-startStop-1:1892 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@770aa75e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@15946d47
+2015-10-13 22:54:24 [ localhost-startStop-1:2504 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 22:54:24 [ localhost-startStop-1:2504 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 22:54:24 [ localhost-startStop-1:2504 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 22:54:24 [ localhost-startStop-1:2556 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 781 ms
+2015-10-13 23:01:55 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:453515 ] - [ INFO ] Closing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 22:54:23 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 23:01:55 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:453518 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@770aa75e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@15946d47
+2015-10-13 23:01:55 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:453525 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Tue Oct 13 22:54:21 CST 2015]; root of context hierarchy
+2015-10-13 23:01:55 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:453527 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@15946d47: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 23:01:55 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:453555 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:92 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 23:01:57 CST 2015]; root of context hierarchy
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:164 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:286 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:386 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:396 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:399 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:633 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 23:01:57 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:669 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@766ffa6c: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1158 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1579 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1579 ms
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1619 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1625 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 23:01:58 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1626 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1662 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:01:58 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1705 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2ad55e33: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@766ffa6c
+2015-10-13 23:01:59 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2169 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 23:01:59 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2169 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 23:01:59 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2169 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 23:01:59 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2221 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 602 ms
+2015-10-13 23:03:49 [ localhost-startStop-1:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 23:03:49 [ localhost-startStop-1:101 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 23:03:49 CST 2015]; root of context hierarchy
+2015-10-13 23:03:49 [ localhost-startStop-1:197 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 23:03:49 [ localhost-startStop-1:418 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:03:49 [ localhost-startStop-1:515 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:03:49 [ localhost-startStop-1:529 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:03:49 [ localhost-startStop-1:535 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 23:03:49 [ localhost-startStop-1:810 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 23:03:50 [ localhost-startStop-1:923 ] - [ INFO ] Initializing ExecutorService  'qbScheduler'
+2015-10-13 23:03:50 [ localhost-startStop-1:924 ] - [ INFO ] Bean 'qbScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-13 23:03:50 [ localhost-startStop-1:942 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@283dfc56: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,qbScheduler,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 23:03:50 [ localhost-startStop-1:1474 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 23:03:51 [ localhost-startStop-1:1997 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1996 ms
+2015-10-13 23:03:51 [ localhost-startStop-1:2041 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 23:03:51 [ localhost-startStop-1:2046 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 23:03:51 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 23:03:51 [ localhost-startStop-1:2047 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 23:03:51 [ localhost-startStop-1:2093 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:03:51 [ localhost-startStop-1:2138 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5843066b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@283dfc56
+2015-10-13 23:03:51 [ localhost-startStop-1:2655 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 23:03:51 [ localhost-startStop-1:2655 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 23:03:51 [ localhost-startStop-1:2655 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 23:03:51 [ localhost-startStop-1:2705 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 664 ms
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213148 ] - [ INFO ] Closing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 23:03:51 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213150 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5843066b: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@283dfc56
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213153 ] - [ INFO ] Closing Root WebApplicationContext: startup date [Tue Oct 13 23:03:49 CST 2015]; root of context hierarchy
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213153 ] - [ INFO ] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@283dfc56: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,qbScheduler,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213169 ] - [ INFO ] {dataSource-1} closed
+2015-10-13 23:07:22 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:213170 ] - [ INFO ] Shutting down ExecutorService 'qbScheduler'
+2015-10-13 23:07:23 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:0 ] - [ INFO ] Root WebApplicationContext: initialization started
+2015-10-13 23:07:23 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:126 ] - [ INFO ] Refreshing Root WebApplicationContext: startup date [Tue Oct 13 23:07:23 CST 2015]; root of context hierarchy
+2015-10-13 23:07:23 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:195 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-bean.xml]
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:300 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:370 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:378 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:384 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mybatis.xml]
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:583 ] - [ INFO ] Loading properties file from class path resource [conf/jdbc.properties]
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:678 ] - [ INFO ] Initializing ExecutorService  'qbScheduler'
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:679 ] - [ INFO ] Bean 'qbScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:693 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5b442249: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,userServiceImpl,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.scheduling.support.ScheduledMethodRunnable#0,org.springframework.scheduling.config.CronTask#0,org.springframework.scheduling.config.ContextLifecycleScheduledTaskRegistrar#0,taskJob1,taskJob2,org.springframework.context.annotation.internalAsyncAnnotationProcessor,org.springframework.context.annotation.internalScheduledAnnotationProcessor,qbScheduler,dataSource,sqlSessionFactory,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,userDAO]; root of factory hierarchy
+2015-10-13 23:07:24 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1125 ] - [ INFO ] {dataSource-1} inited
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1769 ] - [ INFO ] Root WebApplicationContext: initialization completed in 1768 ms
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1814 ] - [ INFO ] FrameworkServlet 'spring': initialization started
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1820 ] - [ INFO ] Refreshing WebApplicationContext for namespace 'spring-servlet': startup date [Tue Oct 13 23:07:25 CST 2015]; parent: Root WebApplicationContext
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1821 ] - [ INFO ] Loading XML bean definitions from class path resource [conf/spring-mvc.xml]
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1880 ] - [ INFO ] JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+2015-10-13 23:07:25 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:1928 ] - [ INFO ] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3400b2f0: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,userController,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,jacksonMessageConverter,viewResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@5b442249
+2015-10-13 23:07:26 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2262 ] - [ INFO ] Mapped URL path [/index.do] onto handler 'userController'
+2015-10-13 23:07:26 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2262 ] - [ INFO ] Mapped URL path [/login.do] onto handler 'userController'
+2015-10-13 23:07:26 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2262 ] - [ INFO ] Mapped URL path [/findUserList.do] onto handler 'userController'
+2015-10-13 23:07:26 [ ContainerBackgroundProcessor[StandardEngine[Catalina]]:2305 ] - [ INFO ] FrameworkServlet 'spring': initialization completed in 491 ms
